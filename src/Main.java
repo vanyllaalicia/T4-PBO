@@ -1,24 +1,22 @@
 public class Main {
+
     public static void main(String[] args) {
 
-        System.out.println("=== Objek Jinak ===");
-        Jinak k1 = new Jinak("Suteng", 4);
-        k1.info();
-        k1.suara();
-        k1.bermain();
+        BujurSangkar bs = new BujurSangkar(4, "Merah");
+        Lingkaran lg = new Lingkaran(7, "Biru");
+        Silinder sl = new Silinder(10, 3, "Hijau");
 
-        System.out.println();
+        System.out.println("=== Eksplorasi Objek ===");
+        bs.printInfo();
+        lg.printInfo();
+        sl.printInfo();
 
-        System.out.println("=== Polymorphism ===");
-        Kucing[] daftar = {
-            new Anggora("Ciko", 1),
-            new Persia("Oyen", 1)
-        };
+        System.out.println("\n=== Polymorphism ===");
 
-        for (Kucing k : daftar) {
-            k.info();
-            k.suara();
-            System.out.println();
+        Bentuk[] daftarBentuk = {bs, lg, sl};
+
+        for (Bentuk b : daftarBentuk) {
+            b.printInfo();
         }
     }
 }
